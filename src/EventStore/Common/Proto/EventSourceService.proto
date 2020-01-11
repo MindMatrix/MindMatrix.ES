@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+option csharp_namespace = "MindMatrix.EventSource";
+
+service EventSourceService {
+  rpc Append (AppendRequest) returns (AppendResponse);
+}
+
+message EventId{
+  string Value = 1;
+}
+
+message AggregateId{
+  string Value = 1;
+}
+
+message AppendEvent{
+  EventId Id = 1;
+  string Type = 2;
+  bool IsJson = 3;
+  bytes Data = 4;
+  bytes Metadata = 5;
+}
+
+message AppendRequest{
+  AggregateId Id = 1;
+  int64 ExpectedAggregateVersion = 2;
+  repeated AppendEvent Events = 3;
+}
+
+message AppendResponse{
+  int64 Version = 1;
+}

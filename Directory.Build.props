@@ -1,0 +1,8 @@
+<Project>
+ <PropertyGroup>
+   <LangVersion>8</LangVersion>
+   <MediatRVersion>8.0.0</MediatRVersion>
+   <ShouldlyVersion>3.0.2</ShouldlyVersion>
+   <StructureMapVersion>4.7.1</StructureMapVersion>
+ </PropertyGroup>
+</Project>
